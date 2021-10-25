@@ -1,0 +1,34 @@
+week 2:
+
+expression vs. assignment
+unary operators
+binary operators
+ternary operators
+operators + values but no assignment -> expressions
+operator precedence (get from documentation)
+short circuit evaluation in boolean expression
+truthy and falsy values (empty list, etc)
+reference values
+shallow copy vs deep copy 
+object comparison, equality operator on reference type 
+values(right hand side) vs location(left hand side)
+get-operations on right hand side & put operation on the left hand side
+operations involving iterables
+    unpacking assignments
+    splatting using * and **
+    use of * as rest operator
+    iteration using for 
+    membership using in operators
+    underscore convention
+    concat using +
+    duplicate elements using *
+    indexing
+    slicing
+    len
+    shallow copy vs deep copy
+    operations on mutable sequences: 
+        assigment(single element, multiple element), 
+        deletion
+operations on sets
+comprehension
+generator expression

@@ -1,0 +1,18 @@
+variable scope
+scope of iteration variable
+underscore convention: use of underscore as throwaway
+use of * as rest-operator
+enumerate
+zip
+break, continue
+else clause in loops
+for else loop
+while else loop 
+try except finally 
+try except else finally
+
+exception hierarchy in try-except block with multiple exception clauses
+catching multiple exception types in a single except clause
+raise statement
+raise with and without exception type
+pass 

@@ -1,0 +1,8 @@
+data types
+pd.Series
+pd.DataFrame
+pd.Index
+
+df.describe
+df.info
+df.head()
