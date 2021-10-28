@@ -3,6 +3,136 @@ pd.Series
 pd.DataFrame
 pd.Index
 
-df.describe
-df.info
+df.describe(include=np.number)
+df.describe(include=np.object)
 df.head()
+
+accessing columns and rows
+    return dtypes
+    using (dot) attribute access operator
+        only works for column names that follow python naming conventions
+        can only update existing column and cannot create new columns
+    using ([]) subscription operator
+    using .loc() method label-based access
+    using .iloc() method index-based access
+
+operating on a pandas object
+    TODO: categorize methods [by application]
+    pd.Series
+        # structure
+        .apply()
+        .value_counts()
+        .value_counts(normalize=True) $
+        .unique()
+        .size()
+        .shape()
+        .count()
+        # missing values 
+        .isna(), isnull() alias 
+        .notna()
+        .fillna()
+        .dropna() $
+        .hasnans()
+        # summary statistics
+        .sum()
+        .cumsum()
+        .min()
+        .max()
+        .mean()
+        .median()
+        .std()
+        .quantile()
+    
+        # organizing records/columns
+        .sort_values(kind='mergesort'   )
+
+        .round() # bankers' rounding
+
+        # arithmetic operators
+        +, -, *, /, //, %, **
+        .add, .sub, .mul, .div, .floordiv, .mod, .pow
+        # comparison operators
+        <, >, <=, >=, ==, !=  
+        .lt, .gt, .le, .ge, .eq, .ne
+        .equals(other:Series) returns a scalar boolean
+        # logical operators
+        |, &, ^
+        ### operator methods allow chaining, missing value handling e.g fill_value,
+        ### axis along which operation need to be performed
+        ### infix operator missing values are ignored.
+        ### methods use skipna=True by default
+        .round() # bankers' rounding
+        .astype()
+        .pipe()
+
+
+    pd.DataFrame
+        .select_dtypes()
+        .filter(like=) $
+        .filter(items=) $
+        .filter(regex=) $
+        .assign()  returns a new df
+        .drop()
+        .info()
+        .insert()
+        .rename(columns=col_map)
+        .rename(columns=cold_map, index=idx_map)
+        .set_index('index_col_name')
+        df.columns.get_loc(col_name) / to get integer index location
+        df.insert(loc=int_index, column='str_name', value=pd.Series, inplace=False)
+
+        .loc[:,['col1', 'col2'...]]
+        .equals() for comparing dataframe object 
+        pd.nan == pd.nan -> False
+        .to_csv(index=False)
+
+        df.nlargest(
+            n, col_title
+            ).nsmallest
+
+        df.drop_duplicates(
+            keep='first'|'last'|False, 
+            subset='
+
+        )
+
+        df property ops: columns, index, shape, renaming, 
+        import io.StringIO
+        pd.read_{format}(
+            index_col=,
+            use_cols=,
+            dtypes={col_name_1:dtype, ...},
+            nrows=,
+            chunksize=,
+            parse_dates=
+        )
+        np.iinfo(), np.finfo()
+        np.int8
+        np.float16
+        np.float32
+        np.float64
+        .memory_usage()
+
+        class methods
+        pd.to_datetime
+
+        dtype float64 implies:
+            - elements are floats with no missing values
+            - elements are floats with missing values
+            - elements are integers with missing values
+        
+        check if a series contains heterogenous datatype
+            - set( df.data_col.apply(type))
+
+
+        sns.distplot
+        sns.boxplot
+        sns.boxenplot
+        sns.violinplot
+        sns.catplot
+        sns.swarmplot
+        sns.heatmap
+        plt.hist
+
+        is data normal?
+        from scipy import stats
