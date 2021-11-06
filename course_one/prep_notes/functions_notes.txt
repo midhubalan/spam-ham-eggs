@@ -1,0 +1,22 @@
+Kinds of functions:
+1 ordinary functions
+    - higher order functions e.g. map, reduce, filter, max, sort 
+    - Decorators
+
+2 function wrappers around methods e.g. len, +, that calls __len__, __add__ methods of object
+3 lambdas
+4 callable objects
+5 generator functions 
+
+pure functions - idempotent
+functions with hysteresis os.getcwd()
+
+df.groupby()
+grouping column(s), aggregating column(s), aggregating functions
+split, apply, combine
+- split df into groups using grouping columns
+- apply a reducing function to each group 
+- combine output from each group into a df
+
+
+

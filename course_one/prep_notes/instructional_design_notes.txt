@@ -1,0 +1,79 @@
+
+step-1 Break it down into small steps
+step-2 Chunk small steps into bigger steps
+step-3 Add narrative and connect
+step-4 Link out to documentation
+step-6 Interleave easy exercises
+step-7 Spice with challenge questions/tasks
+step-8 Publish openly online
+
+jupyter nbconvert --ExecutePreprocessor.enabled=True --to=html my_notebook.ipynb
+
+* self-guided "achieve-your-own-potential" pedagogical approach
+* full guidance on how to solve a problem, 
+  resulting in better student performance than 
+  problem-solving conditions with no guidance. 
+* 
+Notebook organization
+pre-class
+class
+post-class
+- easy
+- medium (homework exercises)
+- hard (bonus)
+
+* Adding prompts with suggestions for interrogating the code and examples 
+  further extend active learning opportunities without rewriting the original content. 
+
+* Interactive sliders, user input sources, and manipulable visualizations are examples 
+  of how other widgets and plugins can open up more possibilities.
+
+* A variety of activities can be supported with the executable code cells so learners 
+  can explore the space in an interactive and iterative environment. 
+
+* They can see and inspect portions of the surrounding code, but aren’t required to touch it, 
+  maintaining appropriate granularity for assignments and challenges. 
+
+* Using markdown formatting separating sections helps scaffold larger problems 
+  and help them really experience a real world workflow rather than statically read about it.
+
+* Providing notebooks with outlines of lecture content or other materials covered in class 
+  can become an useful active learning and engagement strategy. 
+
+* You might provide a mostly blank notebook with just topic headings, 
+  and ask them to take notes in their own style within those spaces. 
+
+* Or you could choose to embed reference notes, examples, and even small activities 
+  within the notebook, asking them to both take notes and work through examples with you.
+
+Pedagogical patterns:
+- shift-enter pattern: static-book like with interactive code
+- fill in the blanks: focus attention on smaller part of the larger workflow
+- target practice : focus on attention on an one component of multistep workflow
+- tweak, twiddle, and frob: give code ask students to change - tweak-> small change, twiddle -> medium change, frob -> large change
+- notebook as an app: interactive app like widget. requires guiding prompts and follow up questions to make interactive play a useful learning experience 
+- win-day-one 
+Live coding:
+- Information bandwidth in the classroom during a live coding session needs to be carefully managed, 
+  particularly when students are trying follow along. 
+  The rhythm of live coding roughly has three stages: 
+    1. preparation, 
+    2. typing, and 
+    3. explanation. 
+  These three follow quickly in succession but are independent phases. 
+- Preparation is the first, where you stop and explain what you are about to do. 
+- Typing is the next phase where you should speak as you type but only say what you are typing. 
+  This ensures that what the learners are seeing on the screen and hearing from you match. 
+- They will likely be looking back and forth between their screen and yours 
+  that they often won’t be able to stop and follow what you are saying while they are typing. 
+- The final stage is to stop and explain what you have typed and what has or will happen when you run the code. 
+- You may choose to execute the code and explain the results 
+  or include a formative assessment or prediction question before running the code. 
+- Pausing to explain the code you just wrote and walk through the results gives students time to catch up to your typing, 
+  time to consider what has happened, and a natural place to ask (and for you to as for) questions about what has happened.
+
+Using notebooks, you can create rich learning experiences that link together the core foundations of computational thinking:
+Decomposition: Breaking down data, processes, or problems into smaller, manageable parts
+Pattern Recognition: Observing patterns, trends, and regularities in data
+Abstraction: Identifying the general principles that generate these patterns
+Algorithm Design: Developing the step by step instructions for solving this and similar problems

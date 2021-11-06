@@ -1,7 +1,30 @@
+#TODO: EDA routine
+    data clusters
+    - fields that add up to 100 or 1 (percentage, proportion)
+    - complementary fields ([pass fail], [male, female, non-binary])
+    - category sets
+    index is the value of interest 
+
+
+getting data from a DataFrame | Series
+
+series[[row_label_1...]]
+series[starting_row_label : ending_row_label]
+series[mask]
+mask -> a series of same length with boolean type values 
+
+df[[row_label_1...], [column_label...]]
+df[starting_row_label : ending_row_label, starting_col_label:ending_col_label]
+df[row_mask, col_mask]
+
+df.sample()
+series.sample()
+
 data types
 pd.Series
 pd.DataFrame
 pd.Index
+pd.crosstab
 
 df.describe(include=np.number)
 df.describe(include=np.object)
@@ -16,7 +39,7 @@ accessing columns and rows
     using .loc() method label-based access
     using .iloc() method index-based access
 
-operating on a pandas object
+operating on a pandas objects
     TODO: categorize methods [by application]
     pd.Series
         # structure
@@ -64,6 +87,17 @@ operating on a pandas object
         .round() # bankers' rounding
         .astype()
         .pipe()
+        .isin()
+        .between()
+        ### when you want the shape of original Series|Dataframe object 
+        ### and the object returned by slicing and dicing to be the same 
+        ### use the following
+        .where()
+        .clip()
+        .clip_lower()
+        .clip_upper()
+        .mask()
+
 
 
     pd.DataFrame
@@ -77,6 +111,10 @@ operating on a pandas object
         .insert()
         .rename(columns=col_map)
         .rename(columns=cold_map, index=idx_map)
+        .groupby()
+        .groupby().transform()
+        .transform()
+        .merge()
         .set_index('index_col_name')
         df.columns.get_loc(col_name) / to get integer index location
         df.insert(loc=int_index, column='str_name', value=pd.Series, inplace=False)
@@ -124,7 +162,7 @@ operating on a pandas object
         check if a series contains heterogenous datatype
             - set( df.data_col.apply(type))
 
-
+    pd.Index
         sns.distplot
         sns.boxplot
         sns.boxenplot
@@ -132,7 +170,55 @@ operating on a pandas object
         sns.catplot
         sns.swarmplot
         sns.heatmap
+        sns.scatterplot
+        sns.lmplot
+        sns.relplot
         plt.hist
 
+
+        strategies:
+            truncate outliers using clip() to aid in visualization
+            continous to categorical by binning
+            reducing cardinality via 'others/miscellaneous' category
+            within column type heteogeneity due to missing values, data entry issues
+            use bivariate correlation to eliminate similar columns
+            use Cramer's V measure to measure coorelation between two qualitative variables and eliminate redundant columns
         is data normal?
         from scipy import stats
+
+        Tidy Dataset
+        - Each variable forms a column
+        - Each observation forms a row 
+        - Each type of observational unit (a cohesive object with related field) forms a table
+
+        typical messiness
+        - column names are values and not variables
+        - multiple variables stored in column names
+        - variables are stored in both columns and rows
+        - multiple types of observational unit are stored in same table
+        - a single observational unit is stored in multiple tables
+
+        Pandas API calls for tidying up Dataset
+        .stack
+        .melt
+        .unstack
+        .pivot
+
+        pd.Series().str
+        .rename
+        .rename_axis
+        .reset_index
+        .set_index
+
+
+        TODO
+        df.query()
+        pd.cut([intervals]) continous -> discrete
+        split-apply-combine froms docs
+        df.groupby().transform()
+        df.groupby(cuts)
+        df.groupby().apply()
+        df.groupby().agg( pd.NamedAgg(col, aggfunc) )
+        df.pivot()
+        pd.unstack()
+        pd.diff()

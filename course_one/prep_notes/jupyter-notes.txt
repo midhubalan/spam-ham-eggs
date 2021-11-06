@@ -1,0 +1,4 @@
+jupyter nbconvert --ExecutePreprocessor.enabled=True --to=html my_notebook.ipynb
+nbconvert
+ipywidget
+extensions
