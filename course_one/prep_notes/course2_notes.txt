@@ -7,6 +7,7 @@ probability distribution
 parameters and resultant curves 
 model evaluation using visualization 
 
+0. Course introduction, overview, and setup
 1. Questions: connecting data, business problem, and stakeholders in research questions 
 2. Tidy data: data dictionary, value types, and missing data  
 3. Tidy data: case definition and dataset transformation 
