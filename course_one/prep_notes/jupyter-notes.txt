@@ -2,3 +2,25 @@ jupyter nbconvert --ExecutePreprocessor.enabled=True --to=html my_notebook.ipynb
 nbconvert
 ipywidget
 extensions
+
+
+IPython line magic
+%matplotlib [inline | notebook]
+%run 
+%load 
+%history
+%debug
+%conda [conda command]
+%pip 
+%env
+%html
+%lsmagic
+%magic 
+%pycat 
+%reset˛
+
+IPython cell magic
+%%writefile
+%%timeit
+%%time
+

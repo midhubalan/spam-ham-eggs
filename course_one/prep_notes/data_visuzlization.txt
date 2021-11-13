@@ -1,0 +1,206 @@
+mathematical function:
+    domain -> co-domain 
+    set definition -> set definition 
+
+data visualization:
+- mapping data to visual elements of a figure
+data visualization categories:
+- by data type
+- by what the visuals intend to communicate
+
+aesthetics
+- attributes of a visual element 
+    * position
+    * shape - font face, line styles -- -. :
+    * size - font size, line width 
+    * color - font color, line color, face color, edge color,
+- aesthetics can be categorized into
+    * those that can represent continous values
+    * those that can represent discrete values
+Type of data 
+    * quantitative & continous 
+    * quantitative & discrete 
+    * qualitative & unordered
+    * qualitative & ordered
+    * date or time 
+    * text
+Scales 
+- mapping function that converts a data point into aesthtic values
+    * color scale e.g. colormap ScalarMappable -> color_value 
+    * position scale e.g. axis f(x, y, ...) -> position on coordinate system
+    * shape scale e.g. 
+    * size scale e.g. 
+Coordinate systems and axes
+- A coordinate system is a combination of a set of position scales and relative geometric arrangement
+
+- cartesian coordinate system
+    * Cartesian coordinate system has two position scale for representing 
+      continous quantitative data arranged perpendicular 
+      (at 90 degrees) relative to each other
+    * distance between two ticks/gridlines in x-axis vs y-axis (similar to aspect ratio)
+    * shorter distance between x-ticks emphasize change in values along y and vice versa
+    * when two scales have same unit e.g miles, hours, ticks both axes should have equal spacing
+    * change in unit is a linear transformation. when units along both axes are changed 
+      the plot does not change in cartesian coordinate system
+- polar coordinate system
+    * useful for data of periodic nature. 
+        - linear = ends don't meet 
+        - polar ends meet e.g. hours of the day, month, process cycles
+        - often used with data representing temporal periods, geospatial data 
+- linear vs non-linear coordinate system
+- linear coordinate system: 
+    * ticks are equidistant and monotonous
+    * even spacing in data corresponds to even spacing in visual (spatial location)
+    * e.g. linear scale, monotonousness is characterized by addition of one unit
+- nonlinear coordinate system 
+    * ticks are monotonous but not equidistant 
+    * even spacing in data do not correspond to uneven spacing in visual
+    * log scale: monotonousness is characterized by multiplication of one unit. e.g. 1,2,4,8,16,32,64...
+    * log scale is particulary useful when the space between datapoints grows exponentially, 
+      when some multiplication or division is involved in deriving data.
+      e.g. normalized scores population of counties expressed as multiples of median population of counties  
+    * log scales cannot visualize zero values when zero values are important consider using square root scale
+    * square root scale: 
+        - meaning of a unit step is not obvious. 
+        - in linear scale unit step(tick) = addition of one unit
+        - in log scale unit step(tick) = multiplication of one unit 
+        - tick spacing can become uneven with more values clustered in one ending_col_label
+        - natural fit for values that come in squares such as area
+
+
+Because multiplication on a log scale looks like addition on a linear scale, 
+log scales are the natural choice for any data that has been obtained by multiplication or division. 
+In particular, ratios should generally be shown on a log scale. 
+As an example, I have taken the number of inhabitants in each county in Texas and divided 
+it by the median number of inhabitants across all Texas counties.
+
+
+Color scales:
+- usecases
+    1 to distinguish categories from one another
+    2 to represent data value 
+    3 to highlight
+1 representing categories
+    * colors hould be distinct from each other yet be equivalent to one another
+    * no color should standout
+    * colors should not imply order 
+    * populat color scales: Okabe Ito scale, Brewer
+2 color to represent data value
+    * sequence of colors
+    * should represent magnitude and difference 
+        = which values are larger and which are smaller
+        = how much one data point is smaller or bigger from another 
+    * color scale should be percieved to vary uniformly across its entire range
+        = ColorBrewer Blues, Viridis, Heat
+    * chloropleths: color + geographic map + data value
+    * diverging color scale with salient/neutral midpoint
+        = CARTO Earth
+        = ColorBrewer PiYG
+        = Blue-Red
+3 colors to highlight 
+    * base colors should not compete with accent colors to catch viewer attention 
+    * accent color scales
+        = Okabe Ito Accent 
+        = Grays with accents
+        = ColorBrewer Accent
+
+Plot categories based on message
+1. Amounts
+    * bars : when there is natural ordering on x-axis, make sure bars are ordered by height.
+    * grouped bar 
+    * stacked bars 
+    * heatmap
+2. Distributions
+    - Distribution of one variable 
+        * Histograms: 
+            = When making a histogram, always explore multiple bin widths.
+            = choice of bin width should reveal underlying data patterns
+            = two histograms with shared x and rotated 90 degree to visualize two distributions
+        * Density plots: 
+            = attempt to visualize underlying probability distribution
+            = guassian kernel, rectangular kernel 
+            = area under curve =1, parameter that defines shape of curve = bandwidth
+            = smoothing of curve is proportional to parameter value 
+            = tails tend to extend and look like inappropriate data values exist in tail 
+            = combine histogram and density plots 
+
+        * Cumulative density 
+            = empirical cumulative density function 
+            = cumulative density plots and kernel density plots do not do well with exponential distributions 
+            = log transform exponential distribution values ad then plot
+            = power law vs log normal distribution
+        * Quantile-Quantile plot
+            = plots predicted rank (percentile) of a data point accorind to probability distributions vs actual rank 
+            = when prediction = actual 45 degree line overlaps with data point dots 
+
+    - Distributions of multiple variables that needs to be compared
+        response variable and grouping variable 
+        * Box plots
+        * violinplot
+        * Strip charts
+        * Sina plots 
+        - to compare distributions of small number of variables 
+        * Stacked histograms 
+        * Overlapping densities 
+        * Ridgeline plots 
+
+3. Proportions
+    * pie chart  - assumes that values add upto 1. comparision of segments is not very intuitive 
+        = pie charts work well when the goal is to emphasize simple fractions, 
+            such as one-half, one-third, or one-quarter. 
+        = They also work well when we have very small datasets
+    * bar chart - comparision of different components is intutive
+    * stacked bar - useful when comparing multiple proportions 
+    * stacked densities
+    * mosaic plots
+    * treemap
+    * parallel sets
+4. x-y (pairwise) relationships
+    * scatter plots
+    * bubble charts
+    * Paires scatter plot
+    * slope graph
+    When there are large number of data points overplotting happens. following plots work around overplotting
+    * density contours 
+    * 2D bins
+    * hex bins
+    * correlogram 
+    When x-axis represents time or other strictly monotonous value
+    * line graph
+    * connected scatter plot
+    * smooth line graph
+5. Geospatial data
+    * map
+    * chloropleths
+    * cartograms
+    * cartogram heatmap
+6. Uncertainty
+    * error bars
+    *  2d error bars 
+    * graded error bars
+    * confidence strips
+    * eyes 
+    * Half eyes quantile dot plot
+principles of figure design
+
+
+
+matplotlib: 
+key objects
+- Artist
+- Container
+- Colormap
+- matplotlib.cm.ScalarMappable
+- matplotlib.collections
+- ticker
+- matplotlib.text.Text,
+- matplotlib.scale.ScaleBase 
+    > matplotlib.scale.LinearScale, 
+    > matplotlib.scale.LogScale
+    > matplotlib.scale.SymmetricalLogScale
+    > matplotlib.scale.LogitScale
+    > matplotlib.scale.FuncScale
+
+Baseclass for all scalar to RGBA mappings.
+
+Typically, Colormap instances are used to convert data values (floats) from the interval [0, 1] to the RGBA color that the respective Colormap represents. For scaling of data into the [0, 1] interval see matplotlib.colors.Normalize. Subclasses of matplotlib.cm.ScalarMappable make heavy use of this data -> normalize -> map-to-color processing chain.

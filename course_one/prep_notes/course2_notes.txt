@@ -1,0 +1,21 @@
+tidy data 
+exploratory data analysis
+data visualization
+statistical plotting
+summary statistics
+probability distribution 
+parameters and resultant curves 
+model evaluation using visualization 
+
+1. Questions: connecting data, business problem, and stakeholders in research questions 
+2. Tidy data: data dictionary, value types, and missing data  
+3. Tidy data: case definition and dataset transformation 
+4. Tidy data: dataset merging
+5. Insights: univariate summary, grouping, and distribution.
+6. Insights: comparing variables and understanding relationships  
+7. Insights: data exploration using split-apply-combine strategy
+8. Insights: interactive exploration using pivot tables
+9. Visualization: grammar of graphics 
+10. Visualization: distributions, categories, and relationship  
+11. Visualization: storytelling using plots
+12. Project presentation
