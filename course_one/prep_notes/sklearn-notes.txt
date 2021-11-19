@@ -1,0 +1,103 @@
+Key interfaces 
+Estimator
+-> All supervised and unsupervised learning algorithms (e.g., for classification, 
+    regression or clustering) are offered as objects implementing this interface. 
+    Machine learning tasks like feature extraction, feature selection or 
+    dimensionality reduction are also provided as estimators.
+-> called with arguments to configure and initialize an estimator object
+-> must have fit method
+-> fit method generally accepts two inputs design matrix, i.e. data, target values, i.e. labels 
+-> returns an estimator 
+
+Predictor 
+-> estimators implmenting this interface must have predict() and score() methods
+-> score must return a value that quantifies the quality of its predictions (the higher, the better).
+-> optional predict_proba() returns class probabilities.
+
+Transformer
+-> estimators implmenting this interface must have must have transform(), fit_transform() methods
+-> Preprocessing, feature selection, feature extraction 
+   and dimensionality reduction algorithms are all provided as transformers
+-> clustering algorithms have fit_predict() that combines, fit and predict ops and transform data to cluster labels   
+
+
+- general workflow
+    1. create estimator object with model hyperparameters as arguments 
+    2. call fit method on the estimator object with training set and labels as arguments 
+    3. call predict method on estimator object with validation set as argument
+
+Pre-processors and transformers:
+- they follow the same API as the estimator objects
+- they actually all inherit from the same BaseEstimator class.
+- The transformer objects don’t have a predict method but 
+  rather a transform method that outputs a newly transformed sample matrix X
+
+one-hot encoding 
+hot-hot encoding 
+feature selection
+overfitting 
+regularization 
+- choosing hyperparameters to prevent overfitting 
+cross validation 
+leakage
+
+digits dataset
+- randomized pca 
+- 
+
+Algorithms to learn 
+    - CLASSIFICATION
+        Multi class classfiers
+            * random forest classifier
+            * Naive Bayes classifier
+            * Logistic regression classifier
+        Binary classifiers
+            * stochastic gradient descent classifier
+            * support vector machine clasifier
+
+    - REGRESSION  
+        * Support vector machines
+    - DIMENSIONIONALITY REDUCTION 
+        * Principle component analysis 
+
+    - ASSOCIATION RULES 
+  - K-Nearest-Neighbors
+  - manifold learning
+    * isomap
+  - Ensemble methods
+    * gradient tree boosting 
+
+metrics:
+    - choice of metrics is critical to guide backward pass and learning 
+    - choice of metrics must consider nature of algorithm, data, and project goals 
+        * project goals example:
+            > classified safe videos for kids to watch. 
+              false negatives , i.e safe videos that are classified unsafe are more acceptable than false positives 
+              unsafe videos classified as safe
+    - accuracy
+    - confusion matrix 
+    - precision vs recall 
+    - Receiver Operating Characteristic (ROC) curve
+    - Area Under Curve
+
+
+
+    - classifier computes a score based on decision function 
+    - class assigned to an instance is based on whether the calculated score is greater than a decision threshold 
+    - scikit-learn do not allow threshold to be configured directly on the classifier object 
+    - classifier object provides decision score via decision_function() method
+    - ***some classifiers have decision_function() and some have  predict_proba() ***
+        * the score decision_function() signifies the distance between the instance and the separating hyperplane. 
+        * The predict_proba() method returns an array containing a row per instance and a column per class, 
+          each containing the probability that the given instance belongs to the given class
+
+    - binomial vs multinomial classification
+    - one-versus-the-rest (OvR) strategy
+        * N-nomial classification task -> N binomial classfication tasks (class 1 | not class 1, class 2 | not class 2, ...) 
+        * compare score from N classfiers to classify instance
+    - one-versus-one (OvO) strategy 
+        * N-nomial classification task -> N-combination-2 (N * (N-1) /2)binomial classfication tasks (class 1 | class 2, class 1 | class 3,... class1 | class N, class 2 | class 3 .. class 2| class N) 
+    - multilabel classification
+        * multiple binomial classification(tags) per instance
+    - multioutput multiclass classification 
+        * multiple multinomial classification per instance

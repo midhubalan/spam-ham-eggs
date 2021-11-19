@@ -1,0 +1,30 @@
+To measure distance between two vectors: vector of predicted value and vector of actual value.
+Root mean square error - RMSE 
+- parametric regression
+- euclidean (l2) norm 
+Mean absolute error - MAE 
+- data with outliers 
+- Manhattan or l1 norm
+higher the norm more emphasis is on the larger values.
+in case of outlies in data we want the model to be not swayed by large values hence lower norm
+
+
+* confusion matrix
+    - false postive (FP): actually negative but classifier predicted positive 
+    - false negative(FN): actually positive but classifier predicted  negative
+    - true positive(TP): classfier correctly predicted as positive
+    - true negative(TN): classifier correctly predicted as negative
+
+    - Precision:
+        TP / (TP + FP) 
+    - Recall AKA Sensitivity:
+        TP / (TP + FN)
+    easier to explain with binary classifier
+    - F1 score
+* Receiver Operating Characteristic (ROC) curve
+    - true positive rate AKA recall / sensitivity # TP / TP + FN 
+    - false positive rate # 1 - true negative rate
+    - true negative rate AKA specificity # TN / TN + FP
+you should prefer the Precision-Recall curve whenever the positive class is rare or 
+when you care more about the false positives than the false negatives. Otherwise, use the ROC curve.
+

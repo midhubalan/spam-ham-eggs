@@ -11,7 +11,7 @@ model evaluation using visualization
 1. Questions: connecting data, business problem, and stakeholders in research questions 
 2. Tidy data: data dictionary, value types, and missing data  
 3. Tidy data: case definition and dataset transformation 
-4. Tidy data: dataset merging
+4. Tidy data: dataset merging and working with index
 5. Insights: univariate summary, grouping, and distribution.
 6. Insights: comparing variables and understanding relationships  
 7. Insights: data exploration using split-apply-combine strategy

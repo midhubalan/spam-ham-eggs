@@ -1,1 +1,67 @@
-ML with python for everyone
+handson machine learning
+We use lowercase italic font for scalar values (such as m or y(i)) and function names (such as h), lowercase bold font for vectors (such as x(i)), and uppercase bold font for matrices (such as X).
+
+1. load data -> 
+2. stratify the data based on any key predictor categories -> 
+3. train-test split -> shuffle rows
+4. explore training set -> 
+5. visualize distributions, groups etc -> 
+6. correlation -> 
+7. explore linear combinations -> use custom transformers where needed
+8. deal with missing data
+    * remove cases 
+    * remove feature 
+    * impute values 
+9. encode categorical features 
+    * one-hot encoding (dummy variables)
+    * multi-hot encoding
+10. scale variables/features using 
+    * normalization/min-max scaler (xi-xmin)/ (xmax-xmin)
+    * standardization/standard scaler (xi-xmean)/xstd
+11. assemble pipeline
+    * ColumnTransformer
+
+project design:
+1. put code responsible for fetching data from filesystem/internet and 
+   loading daaframe objects in a separate module file to make debugging easier.
+2. put code for tranforming/ preprocessing data reusable functions/modules
+3. create custom transfomers to create new features and add them to pipeline 
+4
+understand the machine learning pipeline:
+    where the inputs for your ML project comes from, and where your output (model and hyperparameters ) are deployed
+    
+
+machine learning problems -> ml approach (
+    prediction, 
+    classfication, 
+    clustering, 
+    supervised, 
+    unsupervised, 
+    reinforcement, 
+    online,
+    out-of-core,)
+- common supervised learning: 
+    * regression, 
+    * classification
+- common unsupervised learning: 
+    * clustering, 
+    * visualization, 
+    * association rule learning, 
+    * dimensionality reduction
+instance based algorithms vs model based algorithms
+measure of overfitting: generalization error
+training set, validation set, test set, train-dev set
+- train-dev set to check if training data resembles the production data. 
+solutions to overfitting:
+- get more data
+- reduce noise in the training data 
+- simplify the model( change algorithm, reduce no. of features/parameters, regualrize model)
+
+machine learning pipeline
+baseline performance
+
+
+probability:
+* frequentists' counting vs bayesians' belief
+* frequentists' analyze universe of large, bayesian beliefs work well phenomenon with small occurences
+* prior probability (belief) -> observe data -> update belief -> posterior probability(belief)
