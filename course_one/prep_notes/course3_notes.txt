@@ -65,3 +65,5 @@ probability:
 * frequentists' counting vs bayesians' belief
 * frequentists' analyze universe of large, bayesian beliefs work well phenomenon with small occurences
 * prior probability (belief) -> observe data -> update belief -> posterior probability(belief)
+* bayesian update process using monty hall problem and cookie problem chapter 3 Think Bayes Allen Downey 2nd edition
+
